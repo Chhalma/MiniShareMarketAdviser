@@ -55,7 +55,6 @@ public class SecurityConfig{
                         .requestMatchers("/adviser-home").authenticated()
                         .anyRequest().authenticated();
                 })
-                           
                 .formLogin(form->form
                 		.loginPage("/adviser-login")
                 		.loginProcessingUrl("/adviserHome")
@@ -67,14 +66,17 @@ public class SecurityConfig{
                     login.successHandler(oauthHandler);
 
                 })
-
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/").permitAll()
+                        .logoutSuccessUrl("/")
+                        .permitAll()
                         .invalidateHttpSession(true)
-                        .clearAuthentication(true));
-        
-				return http.build();
+                        .clearAuthentication(true))
+                    .sessionManagement(session -> session
+                        .invalidSessionUrl("/logout")
+                        .sessionFixation(sessionFixation -> sessionFixation.changeSessionId()));
+
+                return http.build();
 	}
 
 
