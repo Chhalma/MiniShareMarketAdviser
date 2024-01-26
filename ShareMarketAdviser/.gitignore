@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore application.properties and google-credential.json
+/src/main/resources/application.properties
+/src/main/resources/application.yml
+/src/main/resources/mini-share-market-advisor-568ac2ff491c.json
