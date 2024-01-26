@@ -1,5 +1,5 @@
 <h1>Share Market Adviser Java Project in Google Cloud </h1>
-Share Market Advisor Project is a web-based application designed to provide users with share market advice. Leveraging Google's Cloud technology, this application allows users to access expert share market advice securely and efficiently.
+Share Market Adviser Project is a web-based application designed to provide users with share market advice. Leveraging Google's Cloud technology, this application allows users to access expert share market advice securely and efficiently.
 
 <h1>Overview</h1>
 Upon successful login, users can specify their preferences by selecting the types of shares they are interested in monitoring and investing in. Users have access to comprehensive advice related to their chosen shares and can modify their preferences at any time. Removing a preferred share stops advice for that share, while adding a new share begins receiving relevant advice. This dynamic approach tailors the user experience to their evolving interests and investment strategies.
@@ -7,7 +7,7 @@ Upon successful login, users can specify their preferences by selecting the type
 <h1>Setup</h1>
 <h2>Tools and Platform</h2>
 <ul>
-  <li><b>Spring Tool Suite (STS):</b> Integrated Development Environment (IDE) for Spring-based Java applications.</li>
+  <li><b>Eclipse or Prefered IDE:</b> Integrated Development Environment (IDE) for Spring-based Java applications.</li>
   <li><b>MySQL Server and MySQL Workbench:</b> Database and visual design tool for managing MySQL databases.</li>
   <li><b>Spring Boot:</b> Framework simplifying the creation of Spring-based applications.</li>
   <li><b>Java 17:</b> Programming language and platform for various applications.</li>
@@ -20,9 +20,9 @@ Upon successful login, users can specify their preferences by selecting the type
 <h2>Cloud Services</h2>
 <ul>
   <li><b>Google Authenticator:</b> OAuth 2.0-based authentication for secure user login.</li>
-<li><b>Google Cloud App Engine:</b> Deployment and scalability with PaaS capabilities.</li>
-<li><b>Google Cloud Pub/Sub:</b> Messaging service for asynchronous messaging and real-time communication.</li>
-<li><b>Google Cloud SQL:</b> Relational Database Management using MySQL for storing user details, share information, and subscriptions.</li>
+  <li><b>Google Cloud App Engine:</b> Deployment and scalability with PaaS capabilities.</li>
+  <li><b>Google Cloud Pub/Sub:</b> Messaging service for asynchronous messaging and real-time communication.</li>
+  <li><b>Google Cloud SQL:</b> Relational Database Management using MySQL for storing user details, share information, and subscriptions.</li>
 
 </ul>
 
@@ -51,13 +51,23 @@ The sample pom.xml file includes:
 <li>spring.cloud.gcp.sql.database-name=<DB_NAME></li>
 <li>spring.cloud.gcp.sql.instance-connection-name=</li>
 </ul>
+<h2>Google Authenticator</h2>
+  Create OAuth 2.0 Credentials follows following steps <ul>
+    <li>In the API & Services Dashboard, click on "Create Credentials."</li>
+    <li>Choose the appropriate credential type, such as "OAuth client ID."</li>
+    <li>Configure the OAuth consent screen by providing necessary information.</li>
+    <li>Select the application type (web application, mobile app, etc.).</li>
+    <li>Configure the authorized redirect URIs if required.</li>
+    <li>Click "Create" to generate your OAuth 2.0 client ID and client secret.</li>
+    <li>Put Client ID and client Secret in application.yml</li>
+  </ul>
 
 <h2>Cloud PubSub Set up</h2>
 <h3>Access to Google Cloud Console and choose the project created to enable pubsub</h3>
 <ul>
   <li>Enable the Pub/Sub API for that project.</li>
   <li>Create a service account.</li>
-<li>Grant Role as Pub/Sub Admin, Pub/Sub Publisher and Pub/Sub Subscribers.</li>
+<li>Grant Role as Pub/Sub Agent, Pub/Sub Admin, Pub/Sub Publisher and Pub/Sub Subscribers.</li>
 
 </ul>
 <h2>Deploy the app to App Engine</h2>
