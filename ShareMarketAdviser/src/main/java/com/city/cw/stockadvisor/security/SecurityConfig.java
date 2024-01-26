@@ -71,10 +71,7 @@ public class SecurityConfig{
                         .logoutSuccessUrl("/")
                         .permitAll()
                         .invalidateHttpSession(true)
-                        .clearAuthentication(true))
-                    .sessionManagement(session -> session
-                        .invalidSessionUrl("/logout")
-                        .sessionFixation(sessionFixation -> sessionFixation.changeSessionId()));
+                        .clearAuthentication(true));
 
                 return http.build();
 	}
